@@ -1,0 +1,210 @@
+:host {
+    position: relative;
+}
+
+h1, h2, h3, h4, p {
+    color: var(--darkgray);
+}
+
+
+
+.trips-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: transparent;
+    z-index: 2;
+}
+
+.background {
+    width: 99%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0;
+    background-image: url("/assets/img/landscape.jpg");
+    background-size: cover;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.trip-card {
+    width: 25em;
+    height: 45em;
+    margin: 3em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom right, var(--lightblue-1), var(--lightblue-2));
+    border-radius: 5px;
+}
+
+.trip-title {
+    align-self: center;
+    margin-top: 6%;
+    font-size: 2.0em;
+    text-align: center;
+}
+
+.trip-photo {
+    width: 15em;
+    height: 15em;
+    margin-bottom: 7%;
+    align-self: center;
+    border-radius: 50%;
+    outline: 0.7em solid var(--lightblue-4);
+    outline-style:double;
+}
+
+.trip-details {
+    width: 90%;
+    height: 30%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.trip-detail-1 {
+    font-size: 1.3em;
+}
+
+.trip-price {
+    margin-bottom: 1em;
+    text-decoration: underline;
+}
+
+.trip-description {
+    overflow-y: auto;
+    text-align: justify;
+}
+
+.separator {
+    align-self: center;
+    width: 90%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border: 2px solid var(--midblue-2);
+    border-radius: 3% / 50%;
+}
+
+.places-section {
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+}
+
+.places-section .trip-places:first-child {
+    margin-left: 0;
+}
+
+.places-section .trip-places:nth-child(2) {
+    margin-left: 0.5em;
+}
+
+.trip-places {
+    margin-left: 5%;
+}
+
+.buttons-field {
+    display: flex;
+    justify-content: center;
+}
+
+.button-container {
+    width: 2.5em;
+    height: 2.5em;
+    margin: 1em 2em 0 2em;
+    display: block;
+}
+
+.button {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: var(--midblue-2);
+    border: 3px solid var(--darkblue-1);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--midblue-1);
+}
+
+.button:active {
+    background-color: var(--lightblue-4);
+    border-style:ridge;
+}
+
+.amount {
+    width: 4em;
+    height: 2.5em;
+    margin: 1em 2em 0 2em;
+    position: relative;
+    background: none;
+    background-color: var(--midblue-2);
+    border: 3px solid var(--darkblue-1);
+    border-radius: 3px;
+}
+
+.button-icon {
+    font-size: 1.5em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+}
+
+.bs {
+    z-index: 3;
+}
+
+.remove-button {
+    font-size: 1.7em;
+    position: absolute;
+    right: 0.1em;
+    top: -0.1em;
+    color: var(--midblue-3);
+    cursor: pointer;
+}
+
+.invalid {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.cheap-trip {
+    border: 0.5em solid green;
+}
+
+.expensive-trip {
+    border: 0.5em solid red;
+}
+
+.rating {
+    width: 7em;
+    height: 1.3em;
+    margin-bottom: 9%;
+    align-self: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .button-container {
+        margin-top: 0.5em;
+    }
+
+    .amount {
+        margin-top: 0.5em;
+    }
+}

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="trips-section">
+        <div class="trip-bar" *ngFor="let stat of data.getTrips()">
+            <div class="photo-section">
+                <img class="photo" [src]="stat.trip.image">
+                <h2 class="trip-title"> {{stat.trip.title}} </h2>
+            </div>
+            <div class="stats-section">
+                <div class="amount">x{{stat.trip.bookedPlaces}}</div>
+                <div class="grouped-price">{{stat.totalValue}} zł</div>
+            </div>
+        </div>
+    </div>
+    <div class="summary">
+        <div class="total-price">{{data.totalPrice}} zł</div>
+        <div class="buy-button">
+            <div class="buy-button-inner">ZAKUP</div>
+            <div class="button-shield"></div>
+        </div>
+    </div>
+</div>

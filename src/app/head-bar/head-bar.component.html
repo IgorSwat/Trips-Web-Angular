@@ -1,0 +1,54 @@
+<header class="headbar">
+    <div class="headbar-inner left">
+        <h1 class="headbar-title">WYCIECZKI</h1>
+        <div class="add-button" *ngIf="addTripButtonState" (click)="slideOutForm()">
+            <div class="add-button-icon material-symbols-outlined">add</div>
+            <div class="button-shield bs"></div>
+        </div>
+    </div>
+    <div class="headbar-inner right">
+        <nav class="nav-field">
+            <div class="nav-menu">
+                <div class="nav-button">
+                    <a class="nav-link" routerLink="app-start-view" (click)="setAddTripButtonState(false)">START</a>
+                </div>
+                <div class="nav-button">
+                    <a class="nav-link" routerLink="app-trips-view" (click)="setAddTripButtonState(true)">WYCIECZKI</a>
+                </div>
+                <div class="nav-button">
+                    <a class="nav-link" routerLink="app-trips-history" (click)="setAddTripButtonState(false)">HISTORIA ZAKUPÓW</a>
+                </div>
+            </div>
+            <div class="hamburger-menu">
+                <div class="ham-clicker" (click)="changeHamMenuState()"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div [ngClass]="{'nav-list':true, 'active-list':hamburgerMenuState}">
+                    <a class="nav-item" routerLink="app-start-view" (click)="changeHamMenuState(); setAddTripButtonState(false)">
+                        <div class="nav-item-inner">START</div>
+                    </a>
+                    <a class="nav-item" routerLink="app-trips-view" (click)="changeHamMenuState(); setAddTripButtonState(true)">
+                        <div class="nav-item-inner">WYCIECZKI</div>
+                    </a>
+                    <a class="nav-item" routerLink="app-trips-history" (click)="changeHamMenuState(); setAddTripButtonState(false)">
+                        <div class="nav-item-inner">HISTORIA ZAKUPÓW</div>
+                    </a>
+                    <div class="remove-button material-symbols-outlined" (click)="changeHamMenuState()">close</div>
+                </div>
+            </div>
+            <div class="notification-field">
+                <div class="notification material-symbols-outlined">notifications_active</div>
+            </div>
+            <div class="username">
+                <div class="username-inner">username</div>
+            </div>
+        </nav>
+        <div [ngClass] = "{'cart':true, 'green': info.shoppingCount > 9}">
+            <div class="shopping-count"> {{info.shoppingCount}} </div>
+            <div class="cart-icon material-symbols-outlined">shopping_cart</div>
+            <div class="button-shield bs"></div>
+            <app-cart class="cart-extended"></app-cart>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,40 @@
+<app-trip-form (formSubmit)="addTrip($event)"></app-trip-form>
+<div class="background"></div>
+<main class="trips-container">
+    <article *ngFor="let tripBox of data.filteredTrips"
+        [ngClass]="{'trip-card':true, 'cheap-trip': tripBox.id == data.getCheapestID(), 'expensive-trip': tripBox.id == data.getMostExpensiveID()}">
+        <h1 class="trip-title"> {{tripBox.trip.title | uppercase}} </h1>
+        <app-trip-rating class="rating" (ratingBeenSet)="setRating(tripBox.id, $event)" [choosedStar]="tripBox.trip.rating"></app-trip-rating>
+        <img [src]="tripBox.trip.image" class="trip-photo" alt="Trip">
+        <div class="trip-details">
+            <h3 class="trip-detail-1"> {{tripBox.trip.country | uppercase}} </h3>
+            <h3 class="trip-detail-1"> {{tripBox.trip.start}} - {{tripBox.trip.end}} </h3>
+            <h4 class="trip-price">Cena wycieczki: {{tripBox.trip.price}} {{tripBox.trip.currency}}</h4>
+            <p class="trip-description"> {{tripBox.trip.description}} </p>
+        </div>
+        <div class="separator"></div>
+        <div class="places-section" *ngIf="tripBox.trip.places > 0">
+            <h4 class="trip-places">Dostępnych miejsc:</h4>
+            <h4 [ngClass]="{'trip-places': true, 'invalid':tripBox.trip.places < 4}"> {{tripBox.trip.places}} </h4>
+        </div>
+        <h4 class="trip-places invalid" *ngIf="tripBox.trip.places == 0">Brak dostępnych miejsc</h4>
+        <div class="buttons-field">
+            <div class="button-container">
+                <div [ngClass]="{'button':true, 'hidden':tripBox.trip.places === 0}" (click)="updateBookings(tripBox.id, 1)">
+                    <p class="button-icon material-symbols-outlined">add</p>
+                    <div class="button-shield bs"></div>
+                </div>
+            </div>
+            <div class="amount">
+                <p class="button-icon"> {{tripBox.trip.bookedPlaces}} </p>
+            </div>
+            <div class="button-container">
+                <div [ngClass]="{'button':true, 'hidden':tripBox.trip.bookedPlaces === 0}" (click)="updateBookings(tripBox.id, -1)">
+                    <p class="button-icon material-symbols-outlined">remove</p>
+                    <div class="button-shield bs"></div>
+                </div>
+            </div>
+        </div>
+        <div class="remove-button" (click)="removeTrip(tripBox.id)">🞮</div>
+    </article>
+</main>

@@ -1,0 +1,221 @@
+:host {
+    position: relative;
+}
+
+.filter-container {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 0.5em solid var(--midblue-2);
+    background-color: aliceblue;
+    box-shadow: 5px 3px 8px rgba(0, 0, 0, 0.4);
+    color: var(--darkgray);
+    z-index: 3;
+    transition: height 1s ease;
+}
+
+.ribbon {
+    width: 2em;
+    height: 2em;
+    clip-path: polygon(0% 0%, 33% 0%, 100% 67%, 100% 100%);
+    background-color: var(--lightblue-3);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.extend {
+    display: none;
+    box-sizing: border-box;
+    width: 3.5em;
+    height: 3em;
+    position: absolute;
+    right: 5%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.5em solid var(--midblue-2);
+    border-top: none;
+    border-radius: 0% 0% 50% 50%;
+    background-color: var(--lightblue-2);
+    z-index: 4;
+    cursor: pointer;
+    transition: top 1s ease;
+}
+
+.line {
+    width: 50%;
+    border: 1px solid black;
+    margin: 1px;
+    transition: all 1s ease;
+}
+
+.first-line {
+    transform: rotate(-45deg) translate(-3px, 3px);
+}
+
+.second-line {
+    opacity: 0%;
+}
+
+.third-line {
+    transform: rotate(45deg) translate(-3px, -3px);
+}
+
+.filter-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2.2em;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    padding-bottom: 2%;
+    border-bottom: 3px solid var(--darkgray);
+}
+
+.filter-section {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-title {
+    margin: 3% 0 2% 0;
+}
+
+.price-bar {
+    width: 60%;
+    height: 2.5em;
+}
+
+.input-country {
+    box-sizing: border-box;
+    width: 80%;
+    height: 1.5em;
+    font-size: 1.3em;
+    border: 0.1em solid var(--darkgray);
+}
+
+.date-bar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.date-bar p {
+    font-size: 1.2em;
+}
+
+.input-date {
+    font-size: 0.8em;
+    height: 2em;
+    border: 0.2em solid var(--darkgray);
+}
+
+.rating-select {
+    width: 80%;
+    height: 12em;
+}
+
+.reset-button {
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    right: 1em;
+    top: calc(40% - 3em);
+    border: 0.2em solid var(--darkblue-1);
+    background: linear-gradient(to bottom, var(--midblue-1), var(--midblue-3));
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reset-button:hover {
+    background: none;
+    background-color: var(--midblue-1);
+}
+
+.reset-button:active {
+    border-style: ridge;
+    background-color: var(--lightblue-4);
+}
+
+.reset-button-inner {
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .date-bar {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .filter-section {
+        margin-bottom: 8%;
+    }
+
+    .price-bar {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    :host {
+        height: 15vh;
+    }
+
+    .filter-container {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:center;
+        align-items: baseline;
+        border-right: none;
+        border-bottom: 0.5em solid var(--midblue-2);
+    }
+
+    .extend {
+        display: flex;
+    }
+    
+    .filter-section {
+        width: 40%;
+        margin-bottom: 5%;
+    }
+
+    .date-bar {
+        flex-direction: row;
+    }
+
+    .reset-button {
+        top: calc(100% - 3em);
+    }
+}
+
+@media screen and (max-height: 750px) and (max-width: 800px) {
+    :host {
+        height: 20vh;
+    }
+}
+
+@media screen and (max-height: 650px) and (max-width: 800px) {
+    :host {
+        height: 25vh;
+    }
+}

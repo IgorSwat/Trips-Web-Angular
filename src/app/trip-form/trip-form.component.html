@@ -1,0 +1,61 @@
+<div class="form-screen" [ngStyle]="{'opacity': formHandler.getOpacity(), 'left': formHandler.getOffset()}">
+<form class="form-container" [formGroup]="modelForm">
+    <h1 class="form-title">Dodaj wycieczkę</h1>
+    <div class="input-field">
+        <p class="required">*</p>
+        <label class="field-name" for="title">Nazwa wycieczki:</label>
+        <input [ngClass]="{'text-field':true, 'invalid': !states.get('title')}" type="text" name="title" formControlName="title"
+            (change)="validityUpdate('title')">
+    </div>
+    <div class="input-field">
+        <p class="required">*</p>
+        <label class="field-name" for="country">Kraj wycieczki:</label>
+        <input [ngClass]="{'text-field':true, 'invalid': !states.get('country')}" type="text" name="country" formControlName="country"
+            (change)="validityUpdate('country')">
+    </div>
+    <div class="input-field">
+        <label class="field-name" for="image">Zdjęcie poglądowe:</label>
+        <input class="text-field" type="text" name="image" formControlName="image">
+    </div>
+    <div class="input-field">
+        <p class="required">*</p>
+        <label class="field-name" for="start">Data rozpoczęcia:</label>
+        <input [ngClass]="{'date-field':true, 'invalid': !states.get('start')}" type="date" name="start" formControlName="start"
+            (change)="validityUpdate('start')">
+    </div>
+    <div class="input-field">
+        <p class="required">*</p>
+        <label class="field-name" for="end">Data zakończenia:</label>
+        <input [ngClass]="{'date-field':true, 'invalid': !states.get('end')}" type="date" name="end" formControlName="end"
+            (change)="validityUpdate('end')">
+    </div>
+    <div class="input-field">
+        <p class="required">*</p>
+        <label class="field-name" for="end">Cena wycieczki:</label>
+        <div class="price-section">
+            <input [ngClass]="{'price-field':true, 'invalid': !states.get('price')}" type="number" name="price" formControlName="price"
+                (change)="validityUpdate('price')">
+            <select class="currency-field" name="currency" formControlName="currency">
+                <option value="zł">zł</option>
+                <option value="$">$</option>
+                <option value="€">€</option>
+            </select>
+        </div>
+    </div>
+    <div class="input-field">
+        <p class="required">*</p>
+        <label class="field-name" for="places">Liczba wolnych miejsc:</label>
+        <input [ngClass]="{'text-field':true, 'invalid': !states.get('places')}" type="number" name="places" formControlName="places"
+            (change)="validityUpdate('places')">
+    </div>
+    <div class="input-field">
+        <label class="field-name" for="description">Opis wycieczki:</label>
+        <textarea class="text-field-long" name="description" formControlName="description" rows="4" cols="40">Pusty opis</textarea>
+    </div>
+    <p class="info">* - wymagane</p>
+    <div class="submit-button" (click)="onSubmit()">
+        <div class="submit-button-inner">Zatwierdź</div>
+    </div>
+    <div class="hide-button material-symbols-outlined" (click)="hideForm()">disabled_by_default</div>
+</form>
+</div>

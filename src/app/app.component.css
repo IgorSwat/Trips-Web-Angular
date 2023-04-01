@@ -1,0 +1,76 @@
+:host {
+    --lightblue-1: rgb(201, 228, 247);
+    --lightblue-2: rgb(153, 204, 238);
+    --lightblue-3: rgb(113, 175, 216);
+    --lightblue-4: rgba(105, 171, 233, 0.74);
+    --midblue-1: rgb(91, 173, 250);
+    --midblue-1-1: rgb(71, 153, 230);
+    --midblue-2: rgb(54, 138, 216);
+    --midblue-3: rgb(52, 120, 221);
+    --darkblue-1: rgb(66, 104, 230);
+    --darkblue-2: rgb(45, 82, 206);
+    --darkblue-3: rgb(16, 48, 156);
+    --lightgray-0: rgb(173, 173, 173);
+    --lightgray: rgb(173, 173, 173);
+    --midgray: rgb(138, 138, 138);
+    --darkgray: rgb(73, 73, 73);
+
+    --lightgreen: rgba(131, 192, 131, 0.699);
+    --lightgreen-1: rgba(115, 194, 115, 0.699);
+    --midgreen-1: rgb(91, 175, 91);
+    --midgreen-2: green;
+    --darkgreen-1: rgb(3, 82, 3);
+
+    --lightred: rgb(218, 138, 138);
+    --lightred-1: rgb(187, 102, 102);
+    --midred-1: rgb(223, 76, 76);
+    --midred-2: rgb(209, 20, 20);
+    --midred-3: rgb(196, 0, 0);
+    --darkred-1: rgb(151, 2, 2);
+
+    font-size: 16px;
+}
+
+.grid-container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 10% 90%;
+    grid-template-areas: 
+    "head head"
+    "main main";
+    overflow: hidden;
+}
+
+.site-header {
+    grid-area: head;
+}
+
+.main-content {
+    grid-area: main;
+    font-size: 0.8em;
+    overflow-y: auto;
+}
+
+@media screen and (max-width: 1600px) {
+    :host {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main-content {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .site-header {
+        font-size: 10px;
+    }
+
+    .main-content {
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,141 @@
+.form-screen {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: -120vw;
+    top: 0;
+    z-index: 10;
+    transition: left 1.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.form-container {
+    width: 45em;
+    height: 90vh;
+    font-size: calc(90vh / 60);
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1em solid var(--midblue-3);
+    border-radius: 4% / 3%;
+    background: linear-gradient(to bottom, aliceblue, var(--lightblue-1));
+}
+
+.form-title {
+    font-size: 3em;
+    margin-top: 0.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 7%;
+    color: var(--darkgray);
+}
+
+.input-field {
+    font-size: 1.2em;
+    width: 90%;
+    height: auto;
+    margin: 1em 0 1em 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.required {
+    position: absolute;
+    color: red;
+    left: -0.5em;
+    top: 0.1em;
+}
+
+.field-name {
+    color: var(--darkgray);
+}
+
+.text-field, .date-field, .price-field, .currency-field {
+    font-size: 1.2em;
+}
+
+.price-section {
+    display: flex;
+}
+
+.submit-button {
+    width: 10em;
+    height: 4em;
+    margin-top: 5%;
+    margin-bottom: 1.5em;
+    position: relative;
+    background-color: var(--midblue-2);
+    border: 3px solid var(--darkblue-1);
+    border-radius: 20% / 50%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: var(--midblue-1-1);
+}
+
+.submit-button:active {
+    background-color: var(--midblue-1);
+    border-style: ridge;
+}
+
+.submit-button-inner {
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.hide-button {
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: rgb(182, 11, 11);
+    cursor: pointer;
+}
+
+.hide-button:active {
+    color: rgb(247, 47, 47);
+}
+
+.invalid {
+    border-color: red;
+    border-style: solid;
+    outline: none;
+}
+
+@media screen and (max-height: 600px) {
+    .input-field {
+        margin: 0.5em 0 0.5em 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :host {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form-screen {
+        transition: none;
+    }
+
+    .form-container {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        border: none;
+    }
+}

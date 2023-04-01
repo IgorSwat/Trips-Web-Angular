@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="value first" *ngIf="lowerPrice > 0"> {{lowerPrice}} </div>
+    <div class="value second" *ngIf="higherPrice > 0"> {{higherPrice}} </div>
+    <div class="slider-tracker"></div>
+    <input class="slider" type="range" name="leftbound" id="i1" 
+        [(ngModel)]="lowerValue" (input)="handleFirst()" (change)="updateFilters()" min="0" max="100" value="0">
+    <input class="slider" type="range" name="rightbound" id="i2" 
+        [(ngModel)]="higherValue" (input)="handleSecond()" (change)="updateFilters()" min="0" max="100" value="100">
+</div>

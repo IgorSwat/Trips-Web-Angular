@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="material-symbols-outlined arrow">arrow_drop_down</div>
+    <select class="material-symbols-outlined star-list" name="rating" [(ngModel)]="currValue" (change)="addRating()">
+        <option class="material-symbols-outlined star-element" value="0" *ngIf="!isStarSelected[0]">star</option>
+        <option class="material-symbols-outlined star-element" value="1" *ngIf="!isStarSelected[1]">star star</option>
+        <option class="material-symbols-outlined star-element" value="2" *ngIf="!isStarSelected[2]">star star star</option>
+        <option class="material-symbols-outlined star-element" value="3" *ngIf="!isStarSelected[3]">star star star star</option>
+        <option class="material-symbols-outlined star-element" value="4" *ngIf="!isStarSelected[4]">star star star star star</option>
+    </select>
+    <div class="selected-container">
+        <div class="selected" *ngFor="let rating of selectedStars, index as id">
+            <div class="material-symbols-outlined star-number"> {{rating.text}} </div>
+            <div class="material-symbols-outlined remove" (click)="removeRating(id)">close</div>
+        </div>
+    </div>
+</div>

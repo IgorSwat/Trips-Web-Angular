@@ -1,0 +1,138 @@
+:host {
+    overflow-y: auto;
+}
+
+.start-site {
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("/assets/img/startLandscape.jpg");
+    background-size: cover;
+    opacity: 70%;
+    z-index: 1;
+}
+
+.central-content {
+    width: 80%;
+    height: auto;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.map {
+    width: 450px;
+    height: 450px;
+    border: 12px solid var(--darkgray);
+    border-radius: 10%;
+    box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.site-title {
+    width: auto;
+    height: 100%;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.brand-name {
+    font-size: 6em;
+    margin-bottom: 0.5rem;
+    text-shadow: 3px 6px 8px rgba(0, 0, 0, 0.45);
+}
+
+.subtitle {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: baseline;
+}
+
+.subtitle-left {
+    margin: 0 0.5em 0 2em;
+    font-size: 3em;
+    opacity: 0.7;
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle-right {
+    font-size: 5em;
+    background: linear-gradient(to bottom, var(--midblue-3), var(--darkblue-3), var(--darkgray));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 3px 6px rgba(65, 138, 212, 0.3);
+}
+
+.details {
+    width: 90%;
+    height: auto;
+    font-size: 1.5em;
+    position: absolute;
+    left: 5%;
+    bottom: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.lower-text {
+    margin: 0.5em;
+}
+
+.bigger-text, .lower-text {
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 1400px) {
+    .central-content {
+        font-size: 0.8em;
+    }
+
+    .map {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .central-content {
+        font-size: 0.6em;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .central-content {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .site-title {
+        margin-bottom: 7%;
+    }
+
+    .map {
+        border-width: 10px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .details {
+        font-size: 1.0em;
+    }
+}

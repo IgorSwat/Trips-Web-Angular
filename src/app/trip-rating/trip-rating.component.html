@@ -1,0 +1,4 @@
+<div class="star-container">
+    <div *ngFor="let i of indices" [ngClass]="{'star':true, 'active': choosedStar == 0, 'selected': choosedStar >= 5 - i}"
+        (click)="setStarRate(5 - i)"></div>
+</div>

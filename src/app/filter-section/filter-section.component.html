@@ -1,0 +1,34 @@
+<div class="extend" [ngStyle]="{'top': heightValue}" (click)="handleFilterState()">
+    <div class="line" [ngClass]="{'first-line': filterState}"></div>
+    <div class="line" [ngClass]="{'second-line': filterState}"></div>
+    <div class="line" [ngClass]="{'third-line': filterState}"></div>
+</div>
+<aside class="filter-container" [ngStyle]="{'height': heightValue}">
+    <div class="ribbon"></div>
+    <h1 class="filter-title">Szukaj wycieczki</h1>
+    <div class="filter-section">
+        <h2 class="input-title">Kraj:</h2>
+        <input type="text" class="input-country" [(ngModel)]="country" (ngModelChange)="sendCountryInfo()">
+    </div>
+    <div class="filter-section">
+        <h2 class="input-title">Cena (zł):</h2>
+        <app-price-bar class="price-bar" [resetSignal]="sendSignal"></app-price-bar>
+    </div>
+    <div class="filter-section">
+        <h2 class="input-title">Przedział czasowy:</h2>
+        <div class="date-bar">
+            <p> od </p>
+            <input type="date" class="input-date" [(ngModel)]="dateMin" (ngModelChange)="sendStartDateInfo()">
+            <p> do </p>
+            <input type="date" class="input-date" [(ngModel)]="dateMax" (ngModelChange)="sendEndDateInfo()">
+        </div>
+    </div>
+    <div class="filter-section">
+        <h2 class="input-title">Ocena:</h2>
+        <app-rating-select class="rating-select" [resetSignal]="sendSignal"></app-rating-select>
+    </div>
+    <div class="reset-button" [ngStyle]="{'opacity': buttonOpacityValue}" (click)="sendResetSignal()">
+        <p class="material-symbols-outlined reset-button-inner">restart_alt</p>
+        <div class="button-shield"></div>
+    </div>
+</aside>

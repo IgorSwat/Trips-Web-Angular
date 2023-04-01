@@ -1,0 +1,132 @@
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, aliceblue, var(--lightblue-1), var(--lightblue-2));
+    border: 0.8em outset var(--midblue-3);
+    color: var(--darkgray);
+}
+
+.trips-section {
+    width: 100%;
+    height: calc(100% - 4em);
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trip-bar {
+    width: 400px;
+    height: 8em;
+    margin: 1em 0 1em 0;
+    border: 0.5em ridge var(--midblue-2);
+    border-radius: 0.6em;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.4);
+    cursor:grab;
+}
+
+.photo-section {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    border-right: 0.5em solid var(--midblue-2);
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: opacity(0.5);
+}
+
+.trip-title {
+    font-size: 1.8em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.stats-section {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.amount {
+    font-size: 2em;
+    margin-bottom: 0.4em;
+}
+
+.grouped-price {
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 0.2em;
+    border: 0.1em solid var(--darkgray);
+    border-radius: 0.2em;
+}
+
+.summary {
+    width: calc(600px - 1.5em);
+    height: 4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.3em groove var(--darkgray);
+}
+
+.total-price {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-left: 3%;
+}
+
+.buy-button {
+    width: 6em;
+    height: 2.5em;
+    margin-right: 3%;
+    margin-top: -0.3em;
+    position: relative;
+    background: linear-gradient(to bottom right, var(--midblue-1), var(--midblue-3));
+    border: 0.3em solid var(--darkblue-2);
+    border-radius: 6% / 18%;
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.buy-button-inner {
+    font-size: 1.3em;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+.buy-button:hover {
+    background: var(--midblue-1);
+}
+
+.buy-button:active {
+    background-color: var(--lightblue-4);
+    border-style: ridge;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .summary {
+        width: calc(300px - 1.5em);
+    }
+
+    .trip-bar {
+        width: 200px;
+    }
+}
